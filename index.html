@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajay's Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+
+body,
+      html {
+        margin: 0; /* Remove margin from body and html */
+        padding: 0; /* Remove padding from body and html */
+      }
+      .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+      }
+      .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      nav.topp{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      div.mainn{
+        position: relative;
+        top:100px;
+        margin-bottom:200px;
+      }
+      footer.bottomm{
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gradient-to-br from-purple-100 to-blue-200 min-h-screen p-6 font-sans dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 dark:text-white">
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<nav class="bg-purple-700 p-4 m-0 dark:bg-purple-800 m-0 shadow-lg fixed topp z-10">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <!-- Logo/Title -->
+      <h1 class="text-white text-3xl font-bold hover:text-purple-300 transition-all duration-300 ease-in-out">Ajay's Portfolio</h1>
+  
+      <!-- Nav Links -->
+      <ul class="flex space-x-8 text-white text-lg font-medium">
+        <li class="hover:scale-110 transition-transform duration-300">
+          <a href="#about" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">About</a>
+        </li>
+        <li class="hover:scale-110 transition-transform duration-300">
+          <a href="#skills" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Skills</a>
+        </li>
+        <li class="hover:scale-110 transition-transform duration-300">
+          <a href="#projects" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Projects</a>
+        </li>
+        <li class="hover:scale-110 transition-transform duration-300">
+          <a href="#certifications" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Certifications</a>
+        </li>
+        <li class="hover:scale-110 transition-transform duration-300">
+          <a href="#contact" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Contact</a>
+        </li>
+      </ul>
+  
+      <!-- Dark Mode Toggle Button -->
+      <button
+        id="dark-mode-toggle"
+        class="text-white focus:outline-none hover:text-purple-300 transition-all duration-300"
+      >
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+  
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl p-10 mainn fade-in dark:bg-gray-800 dark:border-gray-700 dark:shadow-xl">
+      <h1 class="text-5xl font-bold text-center text-purple-700 mb-6" id="about">Hi, I'm Ajay</h1>
+      <p class="text-center text-xl text-gray-700 mb-10 dark:text-gray-300">
+        Pre-final year Computer Science Engineering student passionate about programming, software development, and solving real-world problems.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-12" id="skills">
+        <div class="bg-purple-50 p-6 rounded-xl shadow-md  dark:bg-purple-700 dark:text-white">
+          <h2 class="text-2xl font-semibold text-purple-600 mb-2">About Me</h2>
+          <p class="text-gray-700 text-lg dark:text-gray-300">
+            With a strong commitment to continuous learning, I actively seek opportunities to refine my skills through hands-on projects, exploring new technologies, and breaking down complex problems into elegant, manageable solutions.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl shadow-md  dark:bg-blue-700 dark:text-white">
+          <h2 class="text-2xl font-semibold text-blue-600 mb-4">Skills</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">Java</p>
+            </div>
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">Python</p>
+            </div>
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">OOP Concepts</p>
+            </div>
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">DSA</p>
+            </div>
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">Problem Solving</p>
+            </div>
+            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
+              <p class="font-medium text-gray-800">Continuous Learning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="bg-gradient-to-r from-purple-200 to-blue-200 p-6 rounded-xl text-center shadow-lg mb-12  dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="projects">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Projects</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300">Here are some of my personal and academic projects:</p>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <!-- Project 1 -->
+          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 class="text-2xl font-semibold text-purple-600 mb-2">AutoEx API</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A web scraping tool developed to fetch student results from RGPV and store them in a structured format. This project focuses on improving performance, efficiency, and optimizing the scraping process.
+            </p>
+            <a href="#" class="text-purple-600 dark:text-purple-300 hover:underline">View Project</a>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-2">SecureShare</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A secure file-sharing platform designed to protect sensitive data through encryption. It focuses on user privacy and provides a simple yet effective interface for sharing files.
+            </p>
+            <a href="#" class="text-blue-600 dark:text-blue-300 hover:underline">View Project</a>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 class="text-2xl font-semibold text-green-600 mb-2">Image Resizing and PDF Conversion App</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              A web app to resize images and convert them to PDFs. Users can upload images, resize them to custom dimensions, and download the converted PDF.
+            </p>
+            <a href="#" class="text-green-600 dark:text-green-300 hover:underline">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Section -->
+      <div class="bg-gradient-to-r from-indigo-200 to-pink-200 p-6 rounded-xl text-center shadow-lg mb-12  dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="certifications">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Certifications</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300">Here are some certifications I’ve earned:</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Python for Data Science</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Certification earned from Coursera, focusing on Python programming for Data Science and Machine Learning.
+            </p>
+            <a href="#" class="text-indigo-600 dark:text-indigo-300 hover:underline">View Certificate</a>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <h3 class="text-2xl font-semibold text-pink-600 mb-2">Web Development Bootcamp</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Full-stack web development certification from Udemy, covering front-end and back-end development.
+            </p>
+            <a href="#" class="text-pink-600 dark:text-pink-300 hover:underline">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-purple-700 text-white p-6 m-0 text-center dark:bg-purple-800 bottomm" id="contact">
+        <p class="text-lg">© 2025 Nisha. All rights reserved.</p>
+        <div class="flex justify-center gap-8 mt-4">
+          <a href="https://github.com/your-github" target="_blank" class="hover:text-gray-200 hover-scale">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.codechef.com/users/your-codechef" target="_blank" class="hover:text-gray-200 hover-scale">
+            <i class="fas fa-code"></i>
+          </a>
+          <a href="https://www.hackerrank.com/your-hackerrank" target="_blank" class="hover:text-gray-200 hover-scale">
+            <i class="fab fa-hackerrank"></i>
+          </a>
+          <a href="https://linkedin.com/in/your-linkedin" target="_blank" class="hover:text-gray-200 hover-scale">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </footer>
+
+    <script>
+      // Dark Mode Toggle
+      const toggleButton = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+
+      // Check and apply user's preference for dark mode
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark');
+      }
+
+      toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        
+        // Save the user's preference
+        if (body.classList.contains('dark')) {
+          localStorage.setItem('darkMode', 'enabled');
+        } else {
+          localStorage.setItem('darkMode', 'disabled');
+        }
+      });
+    </script>
+  </body>
+</html>
