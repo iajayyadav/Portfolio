@@ -19,8 +19,10 @@
 
 body,
       html {
-        margin: 0; /* Remove margin from body and html */
-        padding: 0; /* Remove padding from body and html */
+        margin: 0; 
+        padding: 0; 
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
       }
       .hover-scale {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,6 +56,23 @@ body,
         top:100px;
         margin-bottom:200px;
       }
+
+
+
+    
+      @keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+}
+
+.shake-glow-hover:hover {
+  animation: shake 0.5s ease-in-out infinite;
+  box-shadow: 0 0 15px 5px rgba(255, 0, 128, 0.6), 0 0 25px 10px rgba(0, 128, 255, 0.4);
+}
+
+
       footer.bottomm{
         position: absolute;
         left: 0;
@@ -68,10 +87,23 @@ body,
 <nav class="bg-purple-700 p-4 m-0 dark:bg-purple-800 m-0 shadow-lg fixed topp z-10">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <!-- Logo/Title -->
+       <!-- <img height="3%" width="3%" src="logo.png"> -->
+       <img src="logo.png" alt="Profile Picture" class="w-10 h-10 rounded-full border-2 border-white shadow-md" />
+       <!-- <img src="logo.png" class="w-10 h-10 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300" /> -->
+
       <h1 class="text-white text-3xl font-bold hover:text-purple-300 transition-all duration-300 ease-in-out">Ajay Yadav</h1>
   
+        <!-- Hamburger Button -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-white focus:outline-none text-3xl">
+        &#9776; <!-- Unicode for hamburger icon -->
+      </button>
+    </div>
+
+
       <!-- Nav Links -->
-      <ul class="flex space-x-8 text-white text-lg font-medium">
+      <!-- <ul class="flex space-x-8 text-white text-lg font-medium"> -->
+        <ul id="menu" class="hidden md:flex space-x-8 text-white text-lg font-medium">
         <li class="hover:scale-110 transition-transform duration-300">
           <a href="#about" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">About</a>
         </li>
@@ -90,19 +122,27 @@ body,
       </ul>
   
       <!-- Dark Mode Toggle Button -->
-      <button
-        id="dark-mode-toggle"
-        class="text-white focus:outline-none hover:text-purple-300 transition-all duration-300"
-      >
+      <button id="dark-mode-toggle" class="hidden md:block text-white focus:outline-none hover:text-purple-300 transition-all duration-300 ml-4">
         <i class="fas fa-moon"></i>
       </button>
+      
     </div>
+
+
+     <!-- Mobile Menu Links -->
+  <ul id="mobile-menu" class="md:hidden hidden flex-col mt-4 space-y-4 text-white text-lg font-medium px-4">
+    <li><a href="#about" class="block px-4 py-2 rounded-md hover:bg-purple-600">About</a></li>
+    <li><a href="#skills" class="block px-4 py-2 rounded-md hover:bg-purple-600">Skills</a></li>
+    <li><a href="#projects" class="block px-4 py-2 rounded-md hover:bg-purple-600">Projects</a></li>
+    <li><a href="#certifications" class="block px-4 py-2 rounded-md hover:bg-purple-600">Certifications</a></li>
+    <li><a href="#contact" class="block px-4 py-2 rounded-md hover:bg-purple-600">Contact</a></li>
+  </ul>
   </nav>
   
 
     <!-- Main Content -->
     <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl p-10 mainn fade-in dark:bg-gray-800 dark:border-gray-700 dark:shadow-xl">
-      <h1 class="text-5xl font-bold text-center text-purple-700 mb-6" id="about">Hi, I'm Ajay Yadav</h1>
+      <h1 class="text-4xl sm:text-3xl md:text-5xl font-bold text-center text-purple-700 mb-6" id="about">Hi, I'm Ajay Yadav</h1>
       <p class="text-center text-xl text-gray-700 mb-10 dark:text-gray-300">
         Pre-final year Computer Science Engineering student passionate about programming, software development, and solving real-world problems.
       </p>
@@ -265,7 +305,7 @@ body,
   <h2 class="text-3xl font-bold text-gray-800 mb-2">Contact Me</h2>
   <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Feel free to reach out for collaborations or just a friendly hello!</p>
 
-  <form action="https://formspree.io/f/xyzwkgaa" method="POST" class="max-w-3xl mx-auto">
+  <form id="contact-form" action="https://formspree.io/f/xyzwkgaa" method="POST" class="max-w-3xl mx-auto">
     <div class="grid md:grid-cols-2 gap-6">
       <div class="flex flex-col">
         <label for="name" class="text-left mb-2 font-semibold">Name</label>
@@ -288,9 +328,26 @@ body,
   </form>
 </div>
 
-
+<div id="thank-you-popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl text-center">
+    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Thank you!</h3>
+    <p class="text-gray-600 dark:text-gray-300 mb-6">Your message has been sent successfully.</p>
+    <button onclick="closePopup()" class="bg-purple-700 text-white px-6 py-2 rounded-lg hover:bg-purple-800 transition-all">
+      Close
+    </button>
+  </div>
+</div>
 
         </div>
+
+
+        <button id="scrollToTopBtn" 
+  class=" shake-glow-hover shake-hover fixed bottom-6 right-6 p-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-full shadow-2xl hover:scale-110 hover:rotate-12 transition-all duration-300 ease-in-out opacity-0 pointer-events-none z-50">
+  🚀
+</button>
+
+
+
     <footer class="bg-purple-700 text-white p-6 m-0 text-center dark:bg-purple-800 bottomm" id="contact">
         <p class="text-lg">© 2025 Ajay. All rights reserved.</p>
         <div class="flex justify-center gap-8 mt-4">
@@ -309,32 +366,7 @@ body,
         </div>
       </footer>
 
-    <script>
-      // Dark Mode Toggle
-      const toggleButton = document.getElementById('dark-mode-toggle');
-      const body = document.body;
-
-      // Check and apply user's preference for dark mode
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark');
-      }
-
-      toggleButton.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        
-        // Save the user's preference
-        if (body.classList.contains('dark')) {
-          localStorage.setItem('darkMode', 'enabled');
-        } else {
-          localStorage.setItem('darkMode', 'disabled');
-        }
-      });
-
-      
-  togglebutton.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark');
-  });
-
-    </script>
+    <script src="script.js"></script>
+    
   </body>
 </html>
