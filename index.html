@@ -1,372 +1,790 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajay's Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-..."
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
 
-body,
-      html {
-        margin: 0; 
-        padding: 0; 
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-      }
-      .hover-scale {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .hover-scale:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-      }
-      .fade-in {
-        animation: fadeIn 1.5s ease-in-out;
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajay Yadav | Portfolio</title>
+  <meta name="description"
+    content="Ajay Yadav's portfolio showcasing skills, projects, certifications, and achievements in full stack development.">
+  <meta name="keywords"
+    content="Ajay Yadav, Portfolio, Full Stack Developer, Web Development, Projects, Certifications, Skills">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGE5ZWVhOyIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMjE3NmZmOyIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgcng9IjEwIiByeT0iMTAiIGZpbGw9InVybCgjZ3JhZCkiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIHN0eWxlPSJmb250LWZhbWlseTogQXJpYWw7IGZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDMwcHg7Ij5BPC90ZXh0Pgo8L3N2Zz4=" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      nav.topp{
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-      }
-      div.mainn{
-        position: relative;
-        top:100px;
-        margin-bottom:200px;
-      }
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <!-- Progress Bar -->
+  <div id="progress-bar" class="progress-bar"></div>
 
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="#" class="nav-logo" aria-label="AjayY - Home">
+          <span class="sr-only">Ajay Yadav</span>
+          <span class="highlight">A</span><span class="middle">jay</span><span class="highlight">Y</span>
+        </a>
 
+        <div class="nav-links">
+          <a href="#about" class="nav-link" data-section="about">About</a>
+          <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+          <a href="#education" class="nav-link" data-section="education">Education</a>
+          <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
+          <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+      </div>
 
-    
-      @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-}
+      <div class="nav-buttons">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="sr-only">Toggle dark mode</span>
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
 
-.shake-glow-hover:hover {
-  animation: shake 0.5s ease-in-out infinite;
-  box-shadow: 0 0 15px 5px rgba(255, 0, 128, 0.6), 0 0 25px 10px rgba(0, 128, 255, 0.4);
-}
-
-
-      footer.bottomm{
-        position: absolute;
-        left: 0;
-        right: 0;
-      }
-    </style>
-  </head>
-
-  <body class="bg-gradient-to-br from-purple-100 to-blue-200 min-h-screen p-6 font-sans dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 dark:text-white">
-    <!-- Navigation Bar -->
-    <!-- Navigation Bar -->
-<nav class="bg-purple-700 p-4 m-0 dark:bg-purple-800 m-0 shadow-lg fixed topp z-10">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <!-- Logo/Title -->
-       <!-- <img height="3%" width="3%" src="logo.png"> -->
-       <img src="logo.png" alt="Profile Picture" class="w-10 h-10 rounded-full border-2 border-white shadow-md" />
-       <!-- <img src="logo.png" class="w-10 h-10 rounded-full border-2 border-white shadow-md hover:scale-110 transition-transform duration-300" /> -->
-
-      <h1 class="text-white text-3xl font-bold hover:text-purple-300 transition-all duration-300 ease-in-out">Ajay Yadav</h1>
-  
-        <!-- Hamburger Button -->
-    <div class="md:hidden">
-      <button id="menu-toggle" class="text-white focus:outline-none text-3xl">
-        &#9776; <!-- Unicode for hamburger icon -->
-      </button>
+        <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span class="sr-only">Toggle navigation menu</span>
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
 
-
-      <!-- Nav Links -->
-      <!-- <ul class="flex space-x-8 text-white text-lg font-medium"> -->
-        <ul id="menu" class="hidden md:flex space-x-8 text-white text-lg font-medium">
-        <li class="hover:scale-110 transition-transform duration-300">
-          <a href="#about" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">About</a>
-        </li>
-        <li class="hover:scale-110 transition-transform duration-300">
-          <a href="#skills" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Skills</a>
-        </li>
-        <li class="hover:scale-110 transition-transform duration-300">
-          <a href="#projects" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Projects</a>
-        </li>
-        <li class="hover:scale-110 transition-transform duration-300">
-          <a href="#certifications" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Certifications</a>
-        </li>
-        <li class="hover:scale-110 transition-transform duration-300">
-          <a href="#contact" class="px-4 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">Contact</a>
-        </li>
-      </ul>
-  
-      <!-- Dark Mode Toggle Button -->
-      <button id="dark-mode-toggle" class="hidden md:block text-white focus:outline-none hover:text-purple-300 transition-all duration-300 ml-4">
-        <i class="fas fa-moon"></i>
-      </button>
-      
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="mobile-menu" aria-labelledby="mobile-menu-button">
+      <nav class="mobile-nav">
+        <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+        <a href="#skills" class="mobile-nav-link" data-section="skills">Skills</a>
+        <a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a>
+        <a href="#education" class="mobile-nav-link" data-section="education">Education</a>
+        <a href="#certifications" class="mobile-nav-link" data-section="certifications">Certifications</a>
+        <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+      </nav>
     </div>
-
-
-     <!-- Mobile Menu Links -->
-  <ul id="mobile-menu" class="md:hidden hidden flex-col mt-4 space-y-4 text-white text-lg font-medium px-4">
-    <li><a href="#about" class="block px-4 py-2 rounded-md hover:bg-purple-600">About</a></li>
-    <li><a href="#skills" class="block px-4 py-2 rounded-md hover:bg-purple-600">Skills</a></li>
-    <li><a href="#projects" class="block px-4 py-2 rounded-md hover:bg-purple-600">Projects</a></li>
-    <li><a href="#certifications" class="block px-4 py-2 rounded-md hover:bg-purple-600">Certifications</a></li>
-    <li><a href="#contact" class="block px-4 py-2 rounded-md hover:bg-purple-600">Contact</a></li>
-  </ul>
   </nav>
-  
 
-    <!-- Main Content -->
-    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-2xl p-10 mainn fade-in dark:bg-gray-800 dark:border-gray-700 dark:shadow-xl">
-      <h1 class="text-4xl sm:text-3xl md:text-5xl font-bold text-center text-purple-700 mb-6" id="about">Hi, I'm Ajay Yadav</h1>
-      <p class="text-center text-xl text-gray-700 mb-10 dark:text-gray-300">
-        Pre-final year Computer Science Engineering student passionate about programming, software development, and solving real-world problems.
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Animated Background -->
+    <div class="hero-bg">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Hi, I'm
+        <span class="animated-name">
+          <span class="text-wrapper">
+            <span class="letters">Ajay Yadav</span>
+          </span>
+        </span>
+        <br>
+        Aspiring
+        <br>
+        <span class="  typing-animation "></span>
+      </h1>
+      <p class="hero-description">
+        Passionate about crafting beautiful and functional web experiences. I specialize in building modern applications
+        with cutting-edge technologies.
       </p>
 
-      <div class="grid md:grid-cols-2 gap-6 mb-12" id="skills">
-        <div class="bg-purple-50 p-6 rounded-xl shadow-md  dark:bg-purple-700 dark:text-white">
-          <h2 class="text-2xl font-semibold text-purple-600 mb-2">About Me</h2>
-          <p class="text-gray-700 text-lg dark:text-gray-300">
-            With a strong commitment to continuous learning, I actively seek opportunities to refine my skills through hands-on projects, exploring new technologies, and breaking down complex problems into elegant, manageable solutions.
-          </p>
+      <!-- CTA Buttons -->
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">
+          <i class="fas fa-code"></i>
+          View Projects
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <i class="fas fa-paper-plane"></i>
+          Get in Touch
+        </a>
+      </div>
+
+
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
         </div>
-        <div class="bg-blue-50 p-6 rounded-xl shadow-md  dark:bg-blue-700 dark:text-white">
-          <h2 class="text-2xl font-semibold text-blue-600 mb-4">Skills</h2>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">Java</p>
-            </div>
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">Python</p>
-            </div>
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">OOP Concepts</p>
-            </div>
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">DSA</p>
-            </div>
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">Problem Solving</p>
-            </div>
-            <div class="bg-white border border-blue-200 p-4 rounded-lg shadow text-center hover:bg-blue-100 hover-scale dark:bg-blue-800 dark:border-blue-600 dark:text-white">
-              <p class="font-medium text-gray-800">Continuous Learning</p>
+        <span>Scroll down</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-grid">
+          <div class="about-image-container" data-aos="fade-right">
+            <img
+              src="https://plus.unsplash.com/premium_vector-1682307879109-5f57b872fed8?q=80&w=2360&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Ajay Yadav" class="about-image">
+          </div>
+          <div class="about-content" data-aos="fade-left">
+            <span class="about-subtitle">About Me</span>
+            <h2 class="about-title">Passionate Web Developer</h2>
+            <p class="about-description">
+              Hi there! I'm Ajay Yadav, a dedicated web developer with a strong foundation in computer science. I'm
+              passionate about creating innovative and user-friendly web solutions that make a difference.
+            </p>
+            <p class="about-description">
+              My journey in web development has equipped me with expertise in both frontend and backend technologies. I
+              enjoy turning complex problems into simple, beautiful, and intuitive solutions.
+            </p>
+            <p class="about-description">
+              I'm constantly learning and exploring new technologies to stay at the forefront of web development. My
+              focus is on writing clean, efficient code and delivering high-quality applications.
+            </p>
+            <div class="about-buttons">
+              <a href="resume.pdf" class="resume-button" download>
+                <i class="fas fa-download"></i>
+                Download Resume
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Projects Section -->
-      <div class="bg-gradient-to-r from-purple-200 to-blue-200 p-6 rounded-xl text-center shadow-lg mb-12  dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="projects">
-        <h2 class="text-3xl font-bold text-gray-800 mb-2">Projects</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300">Here are some of my personal and academic projects:</p>
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+      <div class="skills-container">
+        <div class="skills-grid">
+          <!-- Frontend Development -->
+          <div class="skill-category" data-aos="fade-right">
+            <h3>
+              <i class="fas fa-code"></i>
+              Frontend Development
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5</span>
+                  <span class="skill-level">95%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">CSS3</span>
+                  <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div class="grid md:grid-cols-3 gap-6 mt-8">
-          <!-- Project 1 -->
-          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 class="text-2xl font-semibold text-purple-600 mb-2">File Arranger</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              A desktop application that automates file organization within a selected directory.	Categorizes files (Images, Videos, PDFs, Audio, etc.) into structured folders.
+          <!-- Backend Development -->
+          <div class="skill-category" data-aos="fade-left">
+            <h3>
+              <i class="fas fa-server"></i>
+              Backend Development
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Python</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Java</span>
+                  <span class="skill-level">88%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">C++</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Flask</span>
+                  <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Python Libraries & Tools -->
+          <div class="skill-category" data-aos="fade-right">
+            <h3>
+              <i class="fab fa-python"></i>
+              Python Libraries & Tools
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Web Scraping</span>
+                  <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">BeautifulSoup</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Requests</span>
+                  <span class="skill-level">88%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">OS Module</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Computer Science -->
+          <div class="skill-category" data-aos="fade-left">
+            <h3>
+              <i class="fas fa-laptop-code"></i>
+              Computer Science
+            </h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Data Structures & Algorithms</span>
+                  <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">OOP Concepts</span>
+                  <span class="skill-level">92%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 92%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Computer Networking</span>
+                  <span class="skill-level">85%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">DBMS & SQL</span>
+                  <span class="skill-level">88%</span>
+                </div>
+                <div class="skill-progress">
+                  <div class="progress-bar" style="width: 88%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+
+
+      <div class="projects-grid">
+        <!-- Project Card 1 -->
+        <div class="project-card" data-aos="fade-up">
+          <div class="project-image-container">
+            <img src="file.png" alt="E-Commerce Platform" class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/yourusername/project1" target="_blank" class="project-link"
+                  aria-label="View source code">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://project1-demo.com" target="_blank" class="project-link" aria-label="View live demo">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">File Arranger App</h3>
+                <span class="project-category">Python , Tkinter</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Arrange files in a folder according to their type.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Tkinter</span>
+              <span class="tech-tag">OOPs</span>
+              <span class="tech-tag">File Handling</span>
+              <span class="tech-tag">GUI</span>
+
+            </div>
+            <div class="project-meta">
+              <div>
+                <i class="fas fa-calendar-alt"></i>
+                <span>Dec 2023</span>
+              </div>
+              <div>
+                <i class="fas fa-star"></i>
+                <span>Featured</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMxYTFhMWEiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjE3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DT01JTkcgU09PTjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmaWxsPSIjODA4MDgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FeGNpdGluZyBwcm9qZWN0IGluIGRldmVsb3BtZW50PC90ZXh0PgogIDxjaXJjbGUgY3g9IjQwMCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhOWVlYSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPHBhdGggZD0iTTQwMCA2MHY0MCIgc3Ryb2tlPSIjNGE5ZWVhIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8cGF0aCBkPSJNNDAwIDEwMGg0MCIgc3Ryb2tlPSIjNGE5ZWVhIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+" alt="Coming Soon" class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Coming Soon">
+                  <i class="fas fa-clock"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Coming Soon</h3>
+                <span class="project-category">Future Project</span>
+              </div>
+            </div>
+            <p class="project-description">
+              An exciting new project is in development. Stay tuned for updates!
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Coming Soon</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <i class="fas fa-clock"></i>
+                <span>In Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgODAwIDQwMCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMxYTFhMWEiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjE3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DT01JTkcgU09PTjwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjIzMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmaWxsPSIjODA4MDgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FeGNpdGluZyBwcm9qZWN0IGluIGRldmVsb3BtZW50PC90ZXh0PgogIDxjaXJjbGUgY3g9IjQwMCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRhOWVlYSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPHBhdGggZD0iTTQwMCA2MHY0MCIgc3Ryb2tlPSIjNGE5ZWVhIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8cGF0aCBkPSJNNDAwIDEwMGg0MCIgc3Ryb2tlPSIjNGE5ZWVhIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+" alt="Coming Soon" class="project-image">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link" aria-label="Coming Soon">
+                  <i class="fas fa-clock"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Coming Soon</h3>
+                <span class="project-category">Future Project</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Another exciting project is in the pipeline. Stay tuned for updates!
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Coming Soon</span>
+            </div>
+            <div class="project-meta">
+              <div>
+                <i class="fas fa-clock"></i>
+                <span>In Development</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Education Journey</h2>
+      <div class="education-timeline">
+        <!-- B.Tech -->
+        <div class="education-card" data-aos="fade-right">
+          <div class="education-content">
+            <span class="education-year">2022 - 2026</span>
+            <h3 class="education-title">B.Tech in Computer Science and Cyber Security</h3>
+            <h4 class="education-school">
+              <i class="fas fa-university"></i>
+              Sagar Institute of Research and Technology Bhopal
+            </h4>
+            <p class="education-description">
+
+            </p>
+            <div class="education-achievements">
+              <span class="achievement-tag">
+                <i class="fas fa-star"></i>
+                CGPA: 6.68/10
+              </span>
               
-            </p>
-            <a href="https://github.com/iajayyadav/File-Arranger" class="text-purple-600 dark:text-purple-300 hover:underline">View Project</a>
+            </div>
           </div>
+        </div>
 
-          <!-- Project 2 -->
-          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 class="text-2xl font-semibold text-blue-600 mb-2">SecureShare</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              A secure file-sharing platform designed to protect sensitive data through encryption. It focuses on user privacy and provides a simple yet effective interface for sharing files.
+        <!-- Intermediate -->
+        <div class="education-card" data-aos="fade-left">
+          <div class="education-content">
+            <span class="education-year">2021 - 2022</span>
+            <h3 class="education-title">Intermediate (XII)</h3>
+            <h4 class="education-school">
+              <i class="fas fa-school"></i>
+              Govt. Subhash Excellence School Bhopal
+            </h4>
+            <p class="education-description">
             </p>
-            <a href="#" class="text-blue-600 dark:text-blue-300 hover:underline">View Project</a>
+            <div class="education-achievements">
+              <span class="achievement-tag">
+                <i class="fas fa-star"></i>
+                Percentage: 87.8%
+              </span>
+              <span class="achievement-tag">
+                <i class="fas fa-graduation-cap"></i>
+                PCM
+              </span>
+            </div>
           </div>
+        </div>
 
-          <!-- Project 3 -->
-          <div class="bg-white rounded-xl shadow-md p-6 hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 class="text-2xl font-semibold text-green-600 mb-2">Image Resizing and PDF Conversion App</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              A web app to resize images and convert them to PDFs. Users can upload images, resize them to custom dimensions, and download the converted PDF.
+        <!-- High School -->
+        <div class="education-card" data-aos="fade-right">
+          <div class="education-content">
+            <span class="education-year">2019 - 2020</span>
+            <h3 class="education-title">High School (X)</h3>
+            <h4 class="education-school">
+              <i class="fas fa-school"></i>
+              Rose Mary School Bhopal
+            </h4>
+            <p class="education-description">
+
             </p>
-            <a href="#" class="text-green-600 dark:text-green-300 hover:underline">View Project</a>
+            <div class="education-achievements">
+              <span class="achievement-tag">
+                <i class="fas fa-star"></i>
+                Percentage: 97%
+              </span>
+              
+            </div>
           </div>
         </div>
       </div>
-
-<!-- Education Section -->
-<div class="bg-gradient-to-r from-purple-200 to-pink-200 p-6 rounded-xl text-center shadow-lg mb-12 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="education">
-  <h2 class="text-3xl font-bold text-gray-800 mb-2">Education</h2>
-  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">My Academic Journey</p>
-
-  <div class="space-y-8">
-    <!-- Degree 1 -->
-    <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md">
-      <h3 class="text-2xl font-semibold text-purple-700 mb-2">Bachelor of Technology (B.Tech)</h3>
-      <p class="text-gray-700 dark:text-gray-300">Computer Science and Engineering and Cyber Security</p>
-      <p class="text-gray-600 dark:text-gray-400 mt-2">Sagar Institute of Research & Technology (SIRT) Bhopal, 2022 - 2026</p>
-      <p class="text-gray-600 dark:text-gray-400">CGPA: 6.5/10</p>
     </div>
+  </section>
 
-    <!-- Degree 2 -->
-    <div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md">
-      <h3 class="text-2xl font-semibold text-purple-700 mb-2">Higher Secondary (12th Grade)</h3>
-      <p class="text-gray-700 dark:text-gray-300">Science Stream (PCM )</p>
-      <p class="text-gray-600 dark:text-gray-400 mt-2">Govt. Subhash Excellence Higher Secondary School</p>
-      <p class="text-gray-600 dark:text-gray-400">Percentage: 87%</p>
-    </div>
-  </div>
-</div>
-
-
-      <!-- Certifications Section -->
-      <div class="bg-gradient-to-r from-indigo-200 to-pink-200 p-6 rounded-xl text-center shadow-lg mb-12  dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="certifications">
-        <h2 class="text-3xl font-bold text-gray-800 mb-2">Certifications</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300">Here are some certifications I’ve earned:</p>
-
-        <div class="grid md:grid-cols-2 gap-6 mt-8">
-          <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 class="text-2xl font-semibold text-indigo-600 mb-2">Demystifying Networking by NPTEL</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-              Certification earned from NPTEL, focusing on Computer Netwoking concepts.
-            </p>
-            <a href="#" class="text-indigo-600 dark:text-indigo-300 hover:underline">View Certificate</a>
+  <!-- Certifications & Achievements Section -->
+  <section id="certifications" class="certifications-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Certifications & Achievements</h2>
+      <div class="achievements-grid">
+        <!-- NPTEL Certification -->
+        <div class="achievement-card certification" data-aos="fade-up">
+          <div class="achievement-icon">
+            <i class="fas fa-network-wired"></i>
           </div>
+          <h3 class="achievement-title">Computer Networking</h3>
+          <p class="achievement-description">NPTEL Certification - Dimistyfing Networking</p>
+          <div class="achievement-meta">
+            <span><i class="far fa-calendar-alt"></i> 2024</span>
+            <div class="certification-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
 
-          <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-            <h3 class="text-2xl font-semibold text-pink-600 mb-2">Cryptography & Network Security by NPTEL</h3>
-            <p class="text-gray-700 dark:text-gray-300">
-               Certification from NPTEL, covering Networking and Cryptography concepts.
-            </p>
-            <a href="#" class="text-pink-600 dark:text-pink-300 hover:underline">View Certificate</a>
+        <!-- Cryptography Certification -->
+        <div class="achievement-card certification" data-aos="fade-up" data-aos-delay="100">
+          <div class="achievement-icon">
+           <i class="fas fa-lock"></i>
+          </div>
+          <h3 class="achievement-title">Cryptography and Network Security</h3>
+          <p class="achievement-description">NPTEL Certification - Cryptography and Network Security</p>
+          <div class="achievement-meta">
+            <span><i class="far fa-calendar-alt"></i> 2025</span>
+            <div class="certification-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- CodeChef Achievement -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="achievement-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3 class="achievement-title">CodeChef 100 days streak</h3>
+          <p class="achievement-description">Achieved 100 days streak on CodeChef with consistent problem-solving and competitive programming.</p>
+          <div class="achievement-meta">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Achieved in 2024</span>
+          </div>
+        </div>
+
+        <!-- HackerRank Achievement -->
+        <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="achievement-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 class="achievement-title">HackerRank Certificate</h3>
+          <p class="achievement-description">Earned certification in Java programming with expertise in advanced concepts and problem-solving.</p>
+          <div class="achievement-meta">
+            <i class="fas fa-certificate"></i>
+            <span>4-Star Rating</span>
           </div>
         </div>
       </div>
-   
+    </div>
+  </section>
 
-          <!-- Achievement Section -->
-          <div class="bg-gradient-to-r from-indigo-200 to-pink-200 p-6 rounded-xl text-center shadow-lg mb-12  dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="certifications">
-            <h2 class="text-3xl font-bold text-gray-800 mb-2">Achievements</h2>
-            <p class="text-lg text-gray-700 dark:text-gray-300">Here are some achievements</p>
-    
-            <div class="grid md:grid-cols-2 gap-6 mt-8">
-              <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <h3 class="text-2xl font-semibold text-indigo-600 mb-2">120+ day coding streak on CodeChef</h3>
-                
-                <a href="#" class="text-indigo-600 dark:text-indigo-300 hover:underline">View Certificate</a>
-              </div>
-    
-              <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <h3 class="text-2xl font-semibold text-pink-600 mb-2">Solved 200+ DSA questions on GFG and CodeChef</h3>
-                
-                <a href="#" class="text-pink-600 dark:text-pink-300 hover:underline">View Certificate</a>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
+      <p class="section-subtitle" data-aos="fade-up">Let's collaborate on your next project!</p>
+
+      <div class="contact-container">
+        <!-- Contact Information -->
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <h3 class="contact-title">Let's Connect</h3>
+            <p class="contact-description">I'm always open to new opportunities and collaborations. Feel free to reach
+              out!</p>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-detail-content">
+                  <h4>Location</h4>
+                  <p>Bhopal, Madhya Pradesh, India</p>
+                </div>
               </div>
 
-              <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <h3 class="text-2xl font-semibold text-pink-600 mb-2">1350 highest rating on CodeChef</h3>
-                
-                <a href="#" class="text-pink-600 dark:text-pink-300 hover:underline">View Certificate</a>
+              <div class="contact-detail-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-detail-content">
+                  <h4>Email</h4>
+                  <p>example@email.com</p>
+                </div>
               </div>
 
-              <div class="bg-white p-6 rounded-xl shadow-md hover-scale dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                <h3 class="text-2xl font-semibold text-pink-600 mb-2">JAVA 4 star on HackerRank</h3>
-                
-                <a href="#" class="text-pink-600 dark:text-pink-300 hover:underline">View Certificate</a>
+              <div class="contact-detail-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-detail-content">
+                  <h4>Phone</h4>
+                  <p>+91 XXXXX XXXXX</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social">
+              <h4>Follow Me</h4>
+              <div class="social-icons">
+                <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub Profile">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn Profile">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter Profile">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram Profile">
+                  <i class="fab fa-instagram"></i>
+                </a>
               </div>
             </div>
           </div>
-
-
-
-
-          <!-- Contact Section -->
-<div class="bg-gradient-to-r from-green-200 to-blue-200 p-6 rounded-xl text-center shadow-lg mb-12 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-800 dark:text-white" id="contact">
-  <h2 class="text-3xl font-bold text-gray-800 mb-2">Contact Me</h2>
-  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Feel free to reach out for collaborations or just a friendly hello!</p>
-
-  <form id="contact-form" action="https://formspree.io/f/xyzwkgaa" method="POST" class="max-w-3xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="flex flex-col">
-        <label for="name" class="text-left mb-2 font-semibold">Name</label>
-        <input type="text" id="name" name="name" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-      </div>
-      <div class="flex flex-col">
-        <label for="email" class="text-left mb-2 font-semibold">Email</label>
-        <input type="email" id="email" name="email" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
-      </div>
-    </div>
-
-    <div class="flex flex-col mt-6">
-      <label for="message" class="text-left mb-2 font-semibold">Message</label>
-      <textarea id="message" name="message" rows="5" required class="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
-    </div>
-
-    <button type="submit" class="mt-6 bg-purple-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-purple-800 transition-all duration-300">
-      Send Message
-    </button>
-  </form>
-</div>
-
-<div id="thank-you-popup" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-  <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl text-center">
-    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Thank you!</h3>
-    <p class="text-gray-600 dark:text-gray-300 mb-6">Your message has been sent successfully.</p>
-    <button onclick="closePopup()" class="bg-purple-700 text-white px-6 py-2 rounded-lg hover:bg-purple-800 transition-all">
-      Close
-    </button>
-  </div>
-</div>
-
         </div>
 
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form" data-aos="fade-left" aria-label="Contact form">
+          <div class="form-header">
+            <h3>Send Message</h3>
+            <p>Fill out the form below, and I'll get back to you soon!</p>
+          </div>
 
-        <button id="scrollToTopBtn" 
-  class=" shake-glow-hover shake-hover fixed bottom-6 right-6 p-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-full shadow-2xl hover:scale-110 hover:rotate-12 transition-all duration-300 ease-in-out opacity-0 pointer-events-none z-50">
-  🚀
-</button>
+          <div class="form-group">
+            <div class="input-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required aria-required="true"
+                placeholder="Your name">
+              <div class="input-icon">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <div class="error-message" id="name-error"></div>
+          </div>
 
+          <div class="form-group">
+            <div class="input-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required aria-required="true"
+                placeholder="Your email">
+              <div class="input-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+            <div class="error-message" id="email-error"></div>
+          </div>
 
+          <div class="form-group">
+            <div class="input-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" required aria-required="true"
+                placeholder="Message subject">
+              <div class="input-icon">
+                <i class="fas fa-heading"></i>
+              </div>
+            </div>
+            <div class="error-message" id="subject-error"></div>
+          </div>
 
-    <footer class="bg-purple-700 text-white p-6 m-0 text-center dark:bg-purple-800 bottomm" id="contact">
-        <p class="text-lg">© 2025 Ajay. All rights reserved.</p>
-        <div class="flex justify-center gap-8 mt-4">
-          <a href="https://github.com/your-github" target="_blank" class="hover:text-gray-200 hover-scale">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.codechef.com/users/your-codechef" target="_blank" class="hover:text-gray-200 hover-scale">
-            <i class="fas fa-code"></i>
-          </a>
-          <a href="https://www.hackerrank.com/your-hackerrank" target="_blank" class="hover:text-gray-200 hover-scale">
-            <i class="fab fa-hackerrank"></i>
-          </a>
-          <a href="https://linkedin.com/in/erajayyadav" target="_blank" class="hover:text-gray-200 hover-scale">
-            <i class="fab fa-linkedin"></i>
-          </a>
+          <div class="form-group">
+            <div class="input-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" required aria-required="true"
+                placeholder="Your message"></textarea>
+              <div class="input-icon textarea-icon">
+                <i class="fas fa-comment-alt"></i>
+              </div>
+            </div>
+            <div class="error-message" id="message-error"></div>
+          </div>
+
+          <button type="submit" class="submit-button" id="submit-button">
+            <span class="button-text">Send Message</span>
+            <span class="button-icon">
+              <i class="fas fa-paper-plane"></i>
+            </span>
+            <span class="button-loader">
+              <i class="fas fa-circle-notch fa-spin"></i>
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Notification Toast -->
+      <div class="notification-toast" id="notification-toast">
+        <div class="notification-content">
+          <i class="notification-icon"></i>
+          <span class="notification-message"></span>
         </div>
-      </footer>
+        <button class="notification-close" aria-label="Close notification">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-    
-  </body>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright">© 2025 Ajay Yadav. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" class="footer-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="footer-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="footer-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <p class="built-with">Built with <span class="heart"><i class="fas fa-heart" style="color: red;"></i></span> by Ajay</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
