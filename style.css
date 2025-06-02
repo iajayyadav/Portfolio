@@ -2548,21 +2548,26 @@ body {
   position: relative;
   width: calc(50% - 30px);
   margin-bottom: var(--spacing-2xl);
-  transition: all var(--transition-normal);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
 }
 
-.education-card:hover {
-  transform: translateY(-5px);
+.education-card.aos-animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .education-card:nth-child(odd) {
   left: 0;
   padding-right: var(--spacing-xl);
+  transform-origin: left center;
 }
 
 .education-card:nth-child(even) {
   left: 50%;
   padding-left: var(--spacing-xl);
+  transform-origin: right center;
 }
 
 .education-content {
@@ -2571,13 +2576,31 @@ body {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(var(--primary-color-rgb), 0.1);
-  transition: all var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
+}
+
+.education-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .education-card:hover .education-content {
+  transform: translateX(10px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-color);
+}
+
+.education-card:hover .education-content::before {
+  opacity: 1;
 }
 
 .education-year {
@@ -2659,6 +2682,13 @@ body {
     width: 100%;
     padding-left: 60px !important;
     padding-right: 0 !important;
+    transform: translateX(-50px) scale(0.95);
+    opacity: 0;
+  }
+  
+  .education-card.aos-animate {
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
   
   .education-card:nth-child(even) {
@@ -2675,6 +2705,10 @@ body {
   
   .education-school {
     font-size: 1rem;
+  }
+
+  .education-card:hover .education-content {
+    transform: translateX(5px);
   }
 }
 
